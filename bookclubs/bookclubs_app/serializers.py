@@ -4,7 +4,7 @@ from .models import UserProfile, Club
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = ('id', 'email', 'username', 'profile_pic', 'date_created', 'is_active', 'is_staff', 'owned_clubs', 'clubs')
+        fields = ('id', 'email', 'username')
 
 
 class ClubSerializer(serializers.ModelSerializer):
