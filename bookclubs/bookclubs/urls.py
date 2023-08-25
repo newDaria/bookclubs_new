@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework.routers import DefaultRouter
 from bookclubs_app.views import ClubViewSet
 
@@ -28,7 +28,8 @@ router.register(r'clubs', ClubViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     # User Authentication URLs using Djoser
-    path('auth/', include('djoser.urls')),
+    # path('auth/', include('djoser.urls')),
+    re_path(r'^auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
 
     # Club Model URLs using ModelViewSet
